@@ -3,22 +3,20 @@ import { WishItem } from '../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
+import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, FormsModule, WishListComponent],
+  imports: [CommonModule, FormsModule, WishListComponent, AddWishFormComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   items: WishItem[] = [];
   title = 'wishlist';
-  newWishText = '';
+
   listFilter: string = '0';
-  addWishItem() {
-    this.items.push(new WishItem(this.newWishText));
-    this.newWishText = '';
-  }
+
   get visibleItems(): WishItem[] {
     let value = this.listFilter;
     if (value === '0') {
