@@ -14,7 +14,9 @@ export class AddWishFormComponent {
   newWishText = '';
 
   addWishItem() {
-    this.addWish.emit(new WishItem(this.newWishText));
-    this.newWishText = '';
+    if (this.newWishText.trim().length > 0) {
+      this.addWish.emit(new WishItem(this.newWishText));
+      this.newWishText = '';
+    }
   }
 }

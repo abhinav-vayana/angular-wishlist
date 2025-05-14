@@ -1,11 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { WishItem } from '../../shared/models/wishItem';
 import { FormsModule } from '@angular/forms';
-const filters = [
-  (item: WishItem) => item,
-  (item: WishItem) => !item.isComplete,
-  (item: WishItem) => item,
-];
+
 @Component({
   selector: 'wish-filter',
   imports: [FormsModule],
