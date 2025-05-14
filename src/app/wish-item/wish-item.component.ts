@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import events from './../../shared/services/EventServices';
 
 @Component({
   selector: 'wish-item',
@@ -20,5 +21,6 @@ export class WishItemComponent {
   }
   removeWish() {
     //removes the wish
+    events.emit('removeWish', this.wish);
   }
 }
