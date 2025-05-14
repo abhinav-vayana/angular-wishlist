@@ -1,17 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
+import { WishItemComponent } from '../wish-item/wish-item.component';
 
 @Component({
   selector: 'wish-list',
-  imports: [CommonModule],
+  imports: [CommonModule, WishItemComponent],
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.css',
 })
 export class WishListComponent {
   @Input() wishes: WishItem[] = [];
-  toggle(item: WishItem) {
-    item.isComplete = !item.isComplete;
-    console.log(item);
-  }
 }

@@ -1,0 +1,12 @@
+<li>
+  <div class="form-check">
+    <label class="form-check-label"
+      ><input
+        type="checkbox"
+        class="checkbox"
+        [checked]="wish.isComplete"
+        (click)="toggle(wish)"
+      />{{ wish.wishText }}</label
+    >
+  </div>
+</li>
