@@ -15,4 +15,8 @@ export class WishItemComponent {
     item.isComplete = !item.isComplete;
     console.log(item);
   }
+  get cssDecorator() {
+    return { 'strikeout text-muted': this.wish.isComplete };
+    return this.wish.isComplete ? 'strikeout text-muted' : '';
+  }
 }
