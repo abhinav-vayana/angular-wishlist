@@ -1,4 +1,4 @@
-<li>
+<li class="d-flex justify-content-between">
   <div class="form-check">
     <label class="form-check-label" [ngClass]="cssDecorator"
       ><input
@@ -9,4 +9,5 @@
       />{{ wish.wishText }}</label
     >
   </div>
+  <div type="button" class="btn-close" (click)="removeWish()"></div>
 </li>

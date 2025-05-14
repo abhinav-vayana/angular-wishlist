@@ -17,6 +17,8 @@ export class WishItemComponent {
   }
   get cssDecorator() {
     return { 'strikeout text-muted': this.wish.isComplete };
-    return this.wish.isComplete ? 'strikeout text-muted' : '';
+  }
+  removeWish() {
+    //removes the wish
   }
 }
