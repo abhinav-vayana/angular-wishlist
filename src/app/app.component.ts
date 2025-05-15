@@ -16,11 +16,16 @@ export class AppComponent implements OnInit {
       this.items.splice(idx, 1);
     });
   }
-  items!: WishItem[];
+  items: WishItem[] = [];
   ngOnInit(): void {
-    this.wishService.getWisher().subscribe((data: any) => {
-      this.items = data;
-    });
+    this.wishService.getWishes().subscribe(
+      (data: any) => {
+        this.items = data;
+      },
+      (error: any) => {
+        alert(error.message);
+      }
+    );
   }
   listFilter: string = '0';
 

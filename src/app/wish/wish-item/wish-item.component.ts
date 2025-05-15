@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { WishItem } from '../../shared/models/wishItem';
-import { EventService } from './../../shared/services/EventServices';
+import { WishItem } from '../../../shared/models/wishItem';
+import { EventService } from '../../../shared/services/EventServices';
 
 @Component({
   selector: 'wish-item',
