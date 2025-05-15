@@ -1,0 +1,5 @@
+[
+    {"wishText":"Learn angular","isComplete":false},
+    {"wishText":"Get Coffee","isComplete":true},
+    {"wishText":"Learn ionic","isComplete":false}
+]

@@ -1,28 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WishItem } from '../shared/models/wishItem';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { WishListComponent } from './wish-list/wish-list.component';
-import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
-import { WishFilterComponent } from './wish-filter/wish-filter.component';
 import { EventService } from './../shared/services/EventServices';
-
+import { WishService } from './wish.service';
 @Component({
   selector: 'app-root',
   standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  constructor(private events: EventService) {
+export class AppComponent implements OnInit {
+  constructor(private events: EventService, private wishService: WishService) {
     this.events.listen('removeWish', (wish: any) => {
       //remove wish from items
       let idx = this.items.indexOf(wish);
       this.items.splice(idx, 1);
     });
   }
-  items: WishItem[] = [];
-
+  items!: WishItem[];
+  ngOnInit(): void {
+    this.wishService.getWisher().subscribe((data: any) => {
+      this.items = data;
+    });
+  }
   listFilter: string = '0';
 
   get visibleItems(): WishItem[] {
