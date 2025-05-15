@@ -2,10 +2,9 @@ import { Component, Input } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
 import { CommonModule } from '@angular/common';
 import { WishItemComponent } from '../wish-item/wish-item.component';
-import events from './../../shared/services/EventServices';
 @Component({
   selector: 'wish-list',
-  imports: [CommonModule, WishItemComponent],
+  standalone: false,
   templateUrl: './wish-list.component.html',
   styleUrl: './wish-list.component.css',
 })

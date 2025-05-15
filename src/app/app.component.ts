@@ -5,24 +5,17 @@ import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 import { WishFilterComponent } from './wish-filter/wish-filter.component';
-import events from './../shared/services/EventServices';
+import { EventService } from './../shared/services/EventServices';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    WishListComponent,
-    AddWishFormComponent,
-    WishFilterComponent,
-  ],
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  constructor() {
-    events.listen('removeWish', (wish: any) => {
+  constructor(private events: EventService) {
+    this.events.listen('removeWish', (wish: any) => {
       //remove wish from items
       let idx = this.items.indexOf(wish);
       this.items.splice(idx, 1);

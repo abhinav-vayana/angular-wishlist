@@ -1,10 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'wish-filter',
-  imports: [FormsModule],
   templateUrl: './wish-filter.component.html',
+  standalone: false,
   styleUrl: './wish-filter.component.css',
 })
 export class WishFilterComponent {

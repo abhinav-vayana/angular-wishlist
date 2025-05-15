@@ -1,11 +1,9 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'add-wish-form',
-  imports: [CommonModule, FormsModule],
+  standalone: false,
   templateUrl: './add-wish-form.component.html',
   styleUrl: './add-wish-form.component.css',
 })
