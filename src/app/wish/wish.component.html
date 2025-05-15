@@ -1,0 +1,13 @@
+<div>
+  <!-- (addWish) means: "when the child emits this event..."
+items.push($event) means: "...take the emitted WishItem (available as $event) and push it into items. -->
+  <add-wish-form (addWish)="items.push($event)"></add-wish-form>
+</div>
+<!-- In app.component.html, you've bound the emitted filter event to update listFilter:
+Now listFilter in the parent component is updated with the selected value ('0', '1', or '2'). -->
+<wish-filter (filter)="listFilter = $event"></wish-filter>
+<div class="container ml-5 mt-3">
+  <div class="col-sm-4">
+    <wish-list [wishes]="visibleItems"></wish-list>
+  </div>
+</div>
